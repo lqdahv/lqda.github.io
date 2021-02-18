@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.0/theme-chalk/index.min.css">
+  <!-- import Vue before Element -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.0/index.min.js"></script> 
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.4.8/vue-router.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/eruda@2.4.1/eruda.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+  
+  <script>
+eruda.init();
+eruda.add(erudaDom);
+
+</script>
+  <style>
+  body{margin: 0;padding: 0;font-size: 14px;}
+  .row-bg .el-card{text-align: ;border-radius: 0}
+  a{display: block;text-decoration: none;}
+.el-message{position: static;margin-left:50%;min-width: 100%;}
+.el-input-group__prepend{width:70px}
+select{box-shadow: none;color: #90939A;border-color: #DCDFE6;border-right-width: 0;background:#F6F7FB ;}
+.el-input__inner,.el-input-group__append{border-radius: 0;}
+select:focus{outline: none;}
+
+.el-carousel__item p{margin-top: 2px;}
+.el-carousel__item:nth-child(2n) {
+     background-color: none;
+  }
+  
+.el-carousel__item:nth-child(2n+1) {
+     background-color: none;
+  }
+  
+  .el-card__header{text-align: center;padding: 10px 18px;}
+  iframe+div+.el-card{margin-top: 4px;}
+  @media screen and (max-width:768px){
+  .el-row .el-col:nth-child(3n+1){clear: both;}
+
+  }
+    .el-divider+p{text-align: center;}
+  .el-divider{margin: 12px 0;}
+  p{margin: 0;;}
+  </style>
+   
+</head>
+<body>
+  <div id="app" class="app" style="height: 100vh;overflow-x: hidden;">
+  
+
+
+	    
+<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <el-menu-item index="1"><router-link to="/">媒体类</router-link></el-menu-item>
+  <el-menu-item index="2"><router-link to="/kaifa">开发类</router-link></el-menu-item>
+  <el-menu-item index="3"><router-link to="/jike">极客类</router-link></el-menu-item>
+</el-menu>    
+
+
+<router-view></router-view>
+    
+    
+<template>
+  <el-backtop target=".app" :right="10" :bottom="10" :visibility-height="10"></el-backtop>
+</template>
+  </div>
+</body>
+
+  <script>
+  var MeiTi={
+  template:`<el-row class="row-bg" style="">
+  <el-col :xs="1" :sm="3" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="22" :sm="8" :md="6"  :lg="4" style="height: px;"><el-card class="box-card" shadow="never"><div style="display: flex;align-items: center;"><img height="100%" width="20%" src="http://sc.adminbuy.cn/uploads/allimg/201213/1-2012131HZ10-L.png"><div style="display: flex;flex-direction: column;justify-content:space-between;height: 100%;"><strong>VIP视频解析</strong><p>ndnd</p></div><router-link to="/jiexi" style="margin-left: auto;"><el-button type="primary" size="mini">进入</el-button></router-link></div><el-divider></el-divider><p>在线解析VIP视频，免费观看全网影视剧，支持优酷 腾讯 爱奇艺等影视站解析</p></el-card></el-col>
+  <el-col :xs="1" :sm="2" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="1" :sm="0" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="22" :sm="8" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>B</div><el-divider></el-divider></el-card></el-col>
+  <el-col :xs="1" :sm="3" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="1" :sm="4" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="22" :sm="8" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>B</div><el-divider></el-divider></el-card></el-col>
+  <el-col :xs="1" :sm="0" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="1" :sm="0" :md="6"  :lg="4">a</el-col>
+  <el-col :xs="22" :sm="8" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>B</div><el-divider></el-divider></el-card></el-col>
+  <el-col :xs="1" :sm="4" :md="6"  :lg="4">a</el-col>
+</el-row>`
+}
+var KaiFa={
+  template:`<el-row class="row-bg" >
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>解析2</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>哈骄傲2</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>开开2</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>解析2</div></el-card></el-col>
+</el-row>`
+  }
+  
+var JiKe={
+  template:`<el-row class="row-bg" >
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>极客</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>哈骄傲2</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>开开2</div></el-card></el-col>
+  <el-col :xs="8" :sm="6" :md="6" :lg="4"><el-card class="box-card" shadow="never"><i class="el-icon-s-goods"></i><div>解析2</div></el-card></el-col>
+</el-row>`
+  }  
+  
+var JieXi={
+    data(){
+    return{
+    input3:'',
+    select:'',
+    }
+    },
+    methods:{
+    a(){
+    this.$refs.play.src=this.$refs.xianlu.value+this.input3
+    }
+   
+    },
+  template:`<div>
+ 
+  <div class="el-message el-message--info">
+<i class="el-message__icon el-icon-info"></i>
+ <el-carousel style="height: 16px;width:80%" indicator-position="none" direction="vertical">
+      <el-carousel-item v-for="item in 3" :key="item">
+        <p class="el-message__content">若播放异常，刷新，更换接口尝试哦！</p>
+      </el-carousel-item>
+</el-carousel>
+<i class="el-message__closeBtn el-icon-close"></i>
+</div>
+
+  <iframe ref="play" src="https://pay.520yk.cn/256/?url=https://m.v.qq.com/x/play.html?cid=mzc00200fw94jce" width="100%" height="250px" frameborder="0" scrolling="no"></iframe>
+ 
+  <div style="margin-top: 0px;display: flex;">
+   <select>
+<option value="https://jqaaa.com/jx.php?url=" selected="selected" ref="xianlu">解析线路一</option>
+<option value="https://jqaaa.com/jx.php?url=">解析线路二</option>
+<option value="https://jiexi.071811.cc/jx.php?url=">解析线路三</option>
+</select>    
+  <el-input placeholder="请输入要解析的网址" v-model="input3" class="input-with-select">
+  
+    <el-button slot="append" icon="el-icon-search" @click="a()"></el-button>
+  </el-input>
+  </div>
+  
+  
+<el-card class="box-card" shadow="never">
+  <div slot="header" class="clearfix">
+    <span>VIP视频解析说明</span>
+  </div>
+  <div>
+   <p>第一步:进入各大视频网站，找到想要观看的VIP视频(例如：爱奇艺、优酷、乐视、芒果、搜狐、腾讯好莱坞),然后复制地址栏链接</p>
+   <p>第二步:将复制的链接粘贴到本站解析输入框，并点击搜索按钮，等待解析完成，即可免费观看VIP视频</p>
+   <p>若遇到不能播放，确保视频地址无误后，请更换播放线路，多点击几次“搜索按钮”</p>
+  </div>
+</el-card>
+
+
+
+  </div>`
+  
+  }  
+  
+  
+  Vue.use(VueRouter)
+  
+  var router = new VueRouter({
+  routes: [
+    { path: '/', component:MeiTi},
+    { path: '/kaifa', component:KaiFa},
+    { path: '/jike', component:JiKe},
+    { path: '/jiexi', component:JieXi},
+  ]
+})
+    new Vue({
+      el: '#app',
+      router,
+      data:{    
+  
+        activeIndex: '1',    
+      },
+     methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    },
+    components:{
+    MeiTi,
+    KaiFa,
+    JiKe,    
+    JieXi,
+    
+  },
+    })
+    
+    
+  
+
+
+
+  </script>
+</html>
