@@ -22,10 +22,9 @@
       appKey: "UsdrUILWscSIGhhYcCVKRLsT",
     })
 
-    const Todo = AV.Object.extend('sssTodo');
+    const todo = new AV.Object.extend('sssTodo');
 
-// 构建对象
-const todo = new Todo();
+
 
 // 为属性赋值
 todo.set('title',   '工程师周会');
