@@ -14,13 +14,12 @@
 
   <button id="a">cscscscssc</button>
   <script>
-    var b = document.getElementById("a")
-    b.onclick=function(){
-
-      AV.init({
+          AV.init({
       appId: "URwlEMim84nkB4T5oD3kOO1K-MdYXbMMI",
       appKey: "UsdrUILWscSIGhhYcCVKRLsT",
     })
+    var b = document.getElementById("a")
+    b.onclick=function(){
 
     const Todo = AV.Object.extend('sXXXssTodo');
       var todo = new Todo
